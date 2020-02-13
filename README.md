@@ -1,2 +1,3 @@
 # docker-clamav
-Dockerfile for a clamav image
+Dockerfile for a [clamav](https://www.clamav.net) image.
+

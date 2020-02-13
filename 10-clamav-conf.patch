@@ -1,0 +1,158 @@
+diff -Nurp etc-a/clamd.conf etc-b/clamd.conf
+--- etc-a/clamd.conf	2020-02-08 18:17:10.980798431 +0000
++++ etc-b/clamd.conf	2020-02-10 09:51:50.902640071 +0000
+@@ -11,7 +11,7 @@
+ # LogFile must be writable for the user running daemon.
+ # A full path is required.
+ # Default: disabled
+-LogFile /var/log/clamav/clamd.log
++#LogFile /var/log/clamav/clamd.log
+ 
+ # By default the log file is locked for writing - the lock protects against
+ # running clamd multiple times (if want to run another clamd, please
+@@ -50,7 +50,7 @@ LogTime yes
+ 
+ # Enable verbose logging.
+ # Default: no
+-#LogVerbose yes
++LogVerbose yes
+ 
+ # Enable log rotation. Always enabled when LogFileMaxSize is enabled.
+ # Default: no
+@@ -71,7 +71,7 @@ LogTime yes
+ # This option allows you to save a process identifier of the listening
+ # daemon (main thread).
+ # Default: disabled
+-PidFile /run/clamav/clamd.pid
++#PidFile /run/clamav/clamd.pid
+ 
+ # Optional path to the global temporary directory.
+ # Default: system specific (usually /tmp or /var/tmp).
+@@ -90,7 +90,7 @@ PidFile /run/clamav/clamd.pid
+ 
+ # Path to a local socket file the daemon will listen on.
+ # Default: disabled (must be specified by a user)
+-LocalSocket /run/clamav/clamd.sock
++#LocalSocket /run/clamav/clamd.sock
+ 
+ # Sets the group ownership on the unix socket.
+ # Default: disabled (the primary group of the user running clamd)
+@@ -106,7 +106,7 @@ LocalSocket /run/clamav/clamd.sock
+ 
+ # TCP port address.
+ # Default: no
+-#TCPSocket 3310
++TCPSocket 3310
+ 
+ # TCP address.
+ # By default we bind to INADDR_ANY, probably not wise.
+@@ -114,7 +114,7 @@ LocalSocket /run/clamav/clamd.sock
+ # from the outside world. This option can be specified multiple
+ # times if you want to listen on multiple IPs. IPv6 is now supported.
+ # Default: no
+-#TCPAddr 127.0.0.1
++TCPAddr 0.0.0.0
+ 
+ # Maximum length the queue of pending connections may grow to.
+ # Default: 200
+@@ -194,7 +194,7 @@ LocalSocket /run/clamav/clamd.sock
+ 
+ # Perform a database check.
+ # Default: 600 (10 min)
+-#SelfCheck 600
++SelfCheck 3600
+ 
+ # Execute a command when virus is found. In the command string %v will
+ # be replaced with the virus name.
+@@ -210,7 +210,7 @@ User clamav
+ 
+ # Don't fork into background.
+ # Default: no
+-#Foreground yes
++Foreground yes
+ 
+ # Enable debug messages in libclamav.
+ # Default: no
+@@ -276,7 +276,7 @@ User clamav
+ # the scan is interrupted immediately, regardless of this config option.
+ #
+ # Default: no
+-#HeuristicScanPrecedence yes
++HeuristicScanPrecedence yes
+ 
+ 
+ ##
+@@ -286,21 +286,21 @@ User clamav
+ # With this option clamav will try to detect broken executables (both PE and
+ # ELF) and alert on them with the Broken.Executable heuristic signature.
+ # Default: no
+-#AlertBrokenExecutables yes
++AlertBrokenExecutables yes
+ 
+ # Alert on encrypted archives _and_ documents with heuristic signature
+ # (encrypted .zip, .7zip, .rar, .pdf).
+ # Default: no
+-#AlertEncrypted yes
++AlertEncrypted yes
+ 
+ # Alert on encrypted archives with heuristic signature (encrypted .zip, .7zip,
+ # .rar).
+ # Default: no
+-#AlertEncryptedArchive yes
++AlertEncryptedArchive yes
+ 
+ # Alert on encrypted archives with heuristic signature (encrypted .pdf).
+ # Default: no
+-#AlertEncryptedDoc yes
++AlertEncryptedDoc yes
+ 
+ # With this option enabled OLE2 files containing VBA macros, which were not
+ # detected by signatures will be marked as "Heuristics.OLE2.ContainsMacros".
+@@ -319,7 +319,7 @@ User clamav
+ 
+ # Alert on raw DMG image files containing partition intersections
+ # Default: no
+-#AlertPartitionIntersection yes
++AlertPartitionIntersection yes
+ 
+ 
+ ##
+@@ -424,7 +424,7 @@ User clamav
+ 
+ # Enable the DLP module
+ # Default: No
+-#StructuredDataDetection yes
++StructuredDataDetection yes
+ 
+ # This option sets the lowest number of Credit Card numbers found in a file
+ # to generate a detect.
+diff -Nurp etc-a/freshclam.conf etc-b/freshclam.conf
+--- etc-a/freshclam.conf	2020-02-08 18:17:10.984798408 +0000
++++ etc-b/freshclam.conf	2020-02-08 18:21:50.503235938 +0000
+@@ -27,7 +27,7 @@ UpdateLogFile /var/log/clamav/freshclam.
+ 
+ # Log time with each message.
+ # Default: no
+-#LogTime yes
++LogTime yes
+ 
+ # Enable verbose logging.
+ # Default: no
+@@ -48,7 +48,7 @@ UpdateLogFile /var/log/clamav/freshclam.
+ 
+ # This option allows you to save the process identifier of the daemon
+ # Default: disabled
+-PidFile /run/clamav/freshclam.pid
++#PidFile /run/clamav/freshclam.pid
+ 
+ # By default when started freshclam drops privileges and switches to the
+ # "clamav" user. This directive allows you to change the database owner.
+@@ -159,7 +159,7 @@ NotifyClamd /etc/clamav/clamd.conf
+ 
+ # Don't fork into background.
+ # Default: no
+-#Foreground yes
++Foreground yes
+ 
+ # Enable debug messages in libclamav.
+ # Default: no
