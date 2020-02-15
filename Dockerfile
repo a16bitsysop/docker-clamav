@@ -7,7 +7,7 @@ WORKDIR /etc/clamav
 COPY 10-clamav-conf.patch .
 
 RUN patch -p1 -i 10-clamav-conf.patch && rm *.patch
-RUN echo "0 */6 * * * /usr/bin/freshclam --no-dns" | crontab -u clamav -
+RUN crontab -d -u root && echo "0 */6 * * * /usr/bin/freshclam" | crontab -u clamav -
 
 VOLUME [ "/var/lib/clamav" ]
 
