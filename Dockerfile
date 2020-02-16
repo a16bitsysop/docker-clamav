@@ -1,7 +1,8 @@
 FROM alpine:3.11
 LABEL maintainer "Duncan Bellamy <dunk@denkimushi.com>"
 
-RUN apk add --no-cache clamav-daemon clamav-libunrar
+RUN sed -i -e 's/v[[:digit:]]\..*\//edge\//g' /etc/apk/repositories && \
+apk add --no-cache clamav-daemon clamav-libunrar
 
 WORKDIR /etc/clamav
 COPY 10-clamav-conf.patch .
