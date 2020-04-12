@@ -14,7 +14,7 @@ before_script:
       echo "Alpine Version $VER"
       echo "Docker Version $MY_VER"
       if [ -z $NOW ] && [ -n "$MY_VER" ] && [ "$MY_VER" = "$VER" ]; then travis_terminate 0; fi
-  - curl -fsSL "https://github.com/docker/docker-credential-helpers/releases/download/v0.6.3/docker-credential-pass-v0.6.3-amd64.tar.gz" | tar xv
+  - curl -fsSL "https://github.com/docker/docker-credential-helpers/releases/download/v0.6.3/docker-credential-pass-v0.6.3-amd64.tar.gz" | tar xvz
   - chmod + $(pwd)/docker-credential-pass
   - gpg --batch --gen-key <<-EOF ; pass init $(gpg --no-auto-check-trustdb --list-secret-keys | grep ^sec | cut -d/ -f2 | cut -d" " -f1)
   - ...
