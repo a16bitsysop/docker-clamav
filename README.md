@@ -12,6 +12,7 @@ Github Repository: [https://github.com/a16bitsysop/docker-clamav](https://github
 
 ## Environment Variables
 | Name     | Desription                                             | Default |
+|----------|--------------------------------------------------------|---------|
 | TIMEZONE | Timezone to use inside the container, eg Europe/London | unset   |
 
 ## Examples
