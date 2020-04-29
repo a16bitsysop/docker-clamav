@@ -12,6 +12,9 @@ RUN crontab -d -u root && echo "0 */6 * * * /usr/bin/freshclam" | crontab -u cla
 
 VOLUME "/var/lib/clamav"
 
-ENTRYPOINT [ "sh", "-c", "freshclam --no-dns; crond -f & clamd;" ]
+WORKDIR /usr/local/bin
+COPY entrypoint.sh .
+
+ENTRYPOINT [ "entrypoint.sh" ]
 
 EXPOSE 3310

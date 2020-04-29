@@ -11,7 +11,8 @@ Uses alpine cron to update the virus database four times a day.
 Github Repository: [https://github.com/a16bitsysop/docker-clamav](https://github.com/a16bitsysop/docker-clamav)
 
 ## Environment Variables
-(Currently none)
+| Name     | Desription                                             | Default |
+| TIMEZONE | Timezone to use inside the container, eg Europe/London | unset   |
 
 ## Examples
 **To run a container with tmpfs mount on /tmp**
