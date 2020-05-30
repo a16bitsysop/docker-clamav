@@ -1,4 +1,4 @@
-FROM alpine:3.11
+FROM alpine:3.12
 LABEL maintainer "Duncan Bellamy <dunk@denkimushi.com>"
 
 RUN sed -i -e 's/v[[:digit:]]\..*\//edge\//g' /etc/apk/repositories \
@@ -10,11 +10,9 @@ COPY 10-clamav-conf.patch .
 RUN patch -p1 -i 10-clamav-conf.patch && rm *.patch
 RUN crontab -d -u root && echo "0 */6 * * * /usr/bin/freshclam" | crontab -u clamav -
 
-VOLUME "/var/lib/clamav"
-
 WORKDIR /usr/local/bin
 COPY entrypoint.sh .
 
 ENTRYPOINT [ "entrypoint.sh" ]
-
+VOLUME /var/lib/clamav
 EXPOSE 3310
