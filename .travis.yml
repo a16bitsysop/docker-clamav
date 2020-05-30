@@ -1,11 +1,9 @@
 import: a16bitsysop/travis-build-configs:docker-apt.yml
 
 env:
-  - DOCKER_CLI_EXPERIMENTAL=enabled IMAGE_NAME=a16bitsysop/clamav APK=clamav
+  - IMAGE_NAME=a16bitsysop/clamav APK=clamav
 
 before_script:
-  - cat ~/.docker/config.json
-  - sudo service docker restart
   - VER=$(docker container run --rm alpine:edge sh -c "apk update > /dev/null; apk info -s "$APK" | head -n1 | sed -r 's+$APK-(.*) install.*+\1+g';")
   - VER="$VER"-alpine"$(docker container run --rm alpine cat /etc/alpine-release)"
   - TAG="-t $IMAGE_NAME:$VER"
