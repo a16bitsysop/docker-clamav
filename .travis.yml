@@ -4,8 +4,9 @@ env:
   - IMAGE_NAME=a16bitsysop/clamav APK=clamav
 
 before_script:
-  - VER=$(version.py -e -a $APK)
-  - VER=$VER"-alpine"$(version.py -b)
+  - APK_VER=$(version.py -e -a $APK)
+  - ALP_VER=$(version.py -b)
+  - VER=$APK_VER"-alpine"$ALP_VER
   - TAG="-t $IMAGE_NAME:$VER"
   - |
       MY_VER="$(version.py -d $IMAGE_NAME)"
