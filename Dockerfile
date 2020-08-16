@@ -5,7 +5,7 @@ RUN sed -i -e 's/v[[:digit:]]\..*\//edge\//g' /etc/apk/repositories \
 && apk add --no-cache clamav-daemon clamav-libunrar
 
 WORKDIR /etc/clamav
-COPY etc-b/clamav.conf etc-b/freshclam.conf ./
+COPY clamav.conf freshclam.conf ./
 
 RUN crontab -d -u root && echo "0 */6 * * * /usr/bin/freshclam" | crontab -u clamav -
 
