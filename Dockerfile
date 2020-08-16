@@ -13,7 +13,7 @@ RUN sed -i -e 's/v[[:digit:]]\..*\//edge\//g' /etc/apk/repositories \
 RUN crontab -d -u root && echo "0 */6 * * * /usr/bin/freshclam" | crontab -u clamav -
 
 WORKDIR /usr/local/bin
-COPY entrypoint.sh .
+COPY travis-helpers/set-timezone.sh entrypoint.sh ./
 
 ENTRYPOINT [ "entrypoint.sh" ]
 VOLUME /var/lib/clamav
