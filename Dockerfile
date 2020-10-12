@@ -8,6 +8,7 @@ RUN sed -i -e 's/v[[:digit:]]\..*\//edge\//g' /etc/apk/repositories \
 WORKDIR /etc/clamav
 COPY etc-b ./
 
+SHELL [ "/bin/ash", "-o", "pipefail", "-c" ]
 RUN crontab -d -u root && echo "0 */6 * * * /usr/bin/freshclam" | crontab -u clamav -
 
 WORKDIR /usr/local/bin
