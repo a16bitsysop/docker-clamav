@@ -17,7 +17,8 @@ https://images.microbadger.com/badges/commit/a16bitsysop/clamav.svg)](
 https://microbadger.com/images/a16bitsysop/clamav "Get_your_own_commit_badge_on_microbadger.com")
 
 ## Github
-Github Repository: [https://github.com/a16bitsysop/docker-clamav](https://github.com/a16bitsysop/docker-clamav)
+Github Repository: [https://github.com/a16bitsysop/docker-clamav](
+https://github.com/a16bitsysop/docker-clamav)
 
 ## Environment Variables
 | Name     | Desription                                             | Default |
@@ -27,5 +28,6 @@ Github Repository: [https://github.com/a16bitsysop/docker-clamav](https://github
 ## Examples
 **To run a container with tmpfs mount on /tmp**
 ```bash
-#docker container run --mount type=tmpfs,destination=/tmp -p 3310:3310 -d --name clamav a16bitsysop/clamav
+#docker container run --mount type=tmpfs,destination=/tmp -p 3310:3310 \
+-d --name clamav a16bitsysop/clamav
 ```
