@@ -3,10 +3,18 @@ Alpine based Dockerfile for a [clamav](https://www.clamav.net) image.
 
 Uses alpine cron to update the virus database four times a day.
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/a16bitsysop/clamav.svg?style=flat-square)](https://hub.docker.com/r/a16bitsysop/clamav/)
-[![Docker Stars](https://img.shields.io/docker/stars/a16bitsysop/clamav.svg?style=flat-square)](https://hub.docker.com/r/a16bitsysop/clamav/)
-[![Version](https://images.microbadger.com/badges/version/a16bitsysop/clamav.svg)](https://microbadger.com/images/a16bitsysop/clamav "Get your own version badge on microbadger.com")
-[![Commit](https://images.microbadger.com/badges/commit/a16bitsysop/clamav.svg)](https://microbadger.com/images/a16bitsysop/clamav "Get your own commit badge on microbadger.com")
+[![Docker Pulls](
+https://img.shields.io/docker/pulls/a16bitsysop/clamav.svg?style=flat-square)](
+https://hub.docker.com/r/a16bitsysop/clamav/)
+[![Docker Stars](
+https://img.shields.io/docker/stars/a16bitsysop/clamav.svg?style=flat-square)](
+https://hub.docker.com/r/a16bitsysop/clamav/)
+[![Version](
+https://images.microbadger.com/badges/version/a16bitsysop/clamav.svg)](
+https://microbadger.com/images/a16bitsysop/clamav "Get_your_own_version_badge_on_microbadger.com")
+[![Commit](
+https://images.microbadger.com/badges/commit/a16bitsysop/clamav.svg)](
+https://microbadger.com/images/a16bitsysop/clamav "Get_your_own_commit_badge_on_microbadger.com")
 
 ## Github
 Github Repository: [https://github.com/a16bitsysop/docker-clamav](https://github.com/a16bitsysop/docker-clamav)
