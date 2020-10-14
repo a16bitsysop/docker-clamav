@@ -28,6 +28,6 @@ https://github.com/a16bitsysop/docker-clamav)
 ## Examples
 **To run a container with tmpfs mount on /tmp**
 ```bash
-#docker container run --mount type=tmpfs,destination=/tmp -p 3310:3310 \
+docker container run --mount type=tmpfs,destination=/tmp -p 3310:3310 \
 -d --name clamav a16bitsysop/clamav
 ```
