@@ -18,4 +18,4 @@ ENTRYPOINT [ "entrypoint.sh" ]
 VOLUME /var/lib/clamav
 EXPOSE 3310
 
-HEALTHCHECK CMD [ "$(echo PING | nc 127.0.0.1 3310)" = "PONG" ]
+HEALTHCHECK --start-period=60s CMD sh -c "echo PING | nc 127.0.0.1 3310 | grep -q PONG" || exit 1
