@@ -20,4 +20,4 @@ ENTRYPOINT [ "entrypoint.sh" ]
 VOLUME /var/lib/clamav
 EXPOSE 3310
 
-HEALTHCHECK --start-period=90s CMD health-nc.sh PING 3310 PONG || exit 1
+HEALTHCHECK --start-period=360s CMD health-nc.sh PING 3310 PONG || exit 1
