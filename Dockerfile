@@ -1,9 +1,8 @@
-FROM alpine:3.12
+FROM alpine:3.13
 LABEL maintainer="Duncan Bellamy <dunk@denkimushi.com>"
 
 # hadolint ignore=DL3018
-RUN sed -i -e 's/v[[:digit:]]\..*\//edge\//g' /etc/apk/repositories \
-&& apk add --no-cache --upgrade clamav-daemon clamav-libunrar
+RUN apk add --no-cache --upgrade clamav-daemon clamav-libunrar
 
 WORKDIR /etc/clamav
 COPY etc-b ./
