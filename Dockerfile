@@ -2,7 +2,7 @@ FROM alpine:3.13
 LABEL maintainer="Duncan Bellamy <dunk@denkimushi.com>"
 
 # hadolint ignore=DL3018
-RUN apk add -u --no-cache --upgrade clamav-daemon clamav-libunrar
+RUN apk add --no-cache --upgrade clamav-daemon clamav-libunrar
 
 WORKDIR /etc/clamav
 COPY etc-b ./
