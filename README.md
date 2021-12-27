@@ -1,6 +1,8 @@
 # docker-clamav
 Alpine based Dockerfile for a [clamav](https://www.clamav.net) image.
 
+This repository has move to: https://gitlab.com/container-email/clamav
+
 Uses alpine cron to update the virus database four times a day.
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/a16bitsysop/clamav.svg?style=plastic)](https://hub.docker.com/r/a16bitsysop/clamav/)
